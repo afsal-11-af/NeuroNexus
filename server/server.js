@@ -22,3 +22,6 @@ mongoose.connect(process.env.MONGO_URI)
     app.listen(5000, () => console.log('🚀 Server running on port 5000'));
   })
   .catch((err) => console.error('❌ MongoDB connection error:', err));
+  const jobRoutes = require('./routes/jobRoutes');
+  app.use('/api', jobRoutes);
+  
